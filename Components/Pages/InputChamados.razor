@@ -1,0 +1,151 @@
+@page "/input"
+@using ChamadoTrackerIA.Services
+@using ChamadoTrackerIA.Models
+@inject ChamadoService ChamadoService
+@inject IJSRuntime JSRuntime
+@inject NavigationManager NavigationManager
+@rendermode InteractiveServer
+
+<PageTitle>Cadastrar Chamados - ChamadoTrackerIA</PageTitle>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="mb-4">📋 Cadastrar Chamados</h1>
+            
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0">Cole o texto dos chamados abaixo:</h5>
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label for="textoInput" class="form-label">Texto dos Chamados:</label>
+                        <textarea class="form-control" id="textoInput" rows="10" @bind="textoColado" 
+                                  placeholder="Cole aqui o texto com os chamados..."></textarea>
+                    </div>
+                    
+                    <div class="d-flex gap-2">
+                        <button class="btn btn-primary" @onclick="ProcessarChamados" disabled="@isProcessing">
+                            @if (isProcessing)
+                            {
+                                <span class="spinner-border spinner-border-sm me-2" role="status"></span>
+                                <span>Processando...</span>
+                            }
+                            else
+                            {
+                                <i class="bi bi-cpu me-2"></i>
+                                <span>Processar com IA</span>
+                            }
+                        </button>
+                        
+                        <button class="btn btn-secondary" @onclick="LimparTexto">
+                            <i class="bi bi-trash me-2"></i>
+                            Limpar
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            @if (chamadosProcessados.Any())
+            {
+                <div class="card mt-4">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">✅ Chamados Processados (@chamadosProcessados.Count)</h5>
+                        <button class="btn btn-success btn-sm" @onclick="IrParaChamados">
+                            <i class="bi bi-list-ul me-1"></i>
+                            Ver Todos os Chamados
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-striped table-hover">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th>Número</th>
+                                        <th>Título</th>
+                                        <th>Responsável</th>
+                                        <th>Aberto Em</th>
+                                        <th>Resolvido Em</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var chamado in chamadosProcessados)
+                                    {
+                                        <tr>
+                                            <td><span class="badge bg-primary">@chamado.Numero</span></td>
+                                            <td>@chamado.Titulo</td>
+                                            <td>@chamado.Responsavel</td>
+                                            <td>@chamado.AbertoEm.ToString("dd/MM/yyyy HH:mm")</td>
+                                            <td>@(chamado.ResolvidoEm?.ToString("dd/MM/yyyy HH:mm") ?? "-")</td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            }
+
+            @if (!string.IsNullOrEmpty(mensagemStatus))
+            {
+                <div class="alert @(mensagemStatus.Contains("Erro") ? "alert-danger" : "alert-success") mt-3" role="alert">
+                    @mensagemStatus
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+@code {
+    private string textoColado = string.Empty;
+    private bool isProcessing = false;
+    private List<Chamado> chamadosProcessados = new();
+    private string mensagemStatus = string.Empty;
+
+    private async Task ProcessarChamados()
+    {
+        if (string.IsNullOrWhiteSpace(textoColado))
+        {
+            mensagemStatus = "Por favor, cole o texto dos chamados antes de processar.";
+            return;
+        }
+
+        isProcessing = true;
+        mensagemStatus = string.Empty;
+        
+        try
+        {
+            chamadosProcessados = await ChamadoService.ProcessarTextoAsync(textoColado);
+            
+            if (chamadosProcessados.Any())
+            {
+                mensagemStatus = $"✅ {chamadosProcessados.Count} chamado(s) processado(s) e salvo(s) com sucesso!";
+            }
+            else
+            {
+                mensagemStatus = "⚠️ Nenhum chamado foi identificado no texto fornecido.";
+            }
+        }
+        catch (Exception ex)
+        {
+            mensagemStatus = $"❌ Erro ao processar chamados: {ex.Message}";
+        }
+        finally
+        {
+            isProcessing = false;
+        }
+    }
+
+    private void LimparTexto()
+    {
+        textoColado = string.Empty;
+        chamadosProcessados.Clear();
+        mensagemStatus = string.Empty;
+    }
+
+    private void IrParaChamados()
+    {
+        NavigationManager.NavigateTo("/chamados");
+    }
+}
+

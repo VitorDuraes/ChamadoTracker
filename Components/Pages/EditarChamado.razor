@@ -1,0 +1,248 @@
+@page "/editar/{id:int}"
+@using ChamadoTrackerIA.Services
+@using ChamadoTrackerIA.Models
+@inject ChamadoService ChamadoService
+@inject NavigationManager NavigationManager
+@rendermode InteractiveServer
+
+<PageTitle>Editar Chamado - ChamadoTrackerIA</PageTitle>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h1>✏️ Editar Chamado</h1>
+                <button class="btn btn-secondary" @onclick="VoltarParaChamados">
+                    <i class="bi bi-arrow-left me-2"></i>
+                    Voltar
+                </button>
+            </div>
+
+            @if (isLoading)
+            {
+                <div class="text-center py-4">
+                    <div class="spinner-border" role="status">
+                        <span class="visually-hidden">Carregando...</span>
+                    </div>
+                    <p class="mt-2">Carregando chamado...</p>
+                </div>
+            }
+            else if (chamado == null)
+            {
+                <div class="alert alert-danger" role="alert">
+                    ❌ Chamado não encontrado.
+                </div>
+            }
+            else
+            {
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0">Dados do Chamado #@chamado.Numero</h5>
+                    </div>
+                    <div class="card-body">
+                        <EditForm Model="chamado" OnValidSubmit="SalvarChamado">
+                            <DataAnnotationsValidator />
+                            <ValidationSummary class="text-danger" />
+
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label">Número:</label>
+                                    <InputText class="form-control" @bind-Value="chamado.Numero" />
+                                    <ValidationMessage For="() => chamado.Numero" />
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <label class="form-label">Responsável:</label>
+                                    <InputText class="form-control" @bind-Value="chamado.Responsavel" />
+                                </div>
+                            </div>
+
+                            <div class="row g-3 mt-2">
+                                <div class="col-12">
+                                    <label class="form-label">Título:</label>
+                                    <InputText class="form-control" @bind-Value="chamado.Titulo" />
+                                    <ValidationMessage For="() => chamado.Titulo" />
+                                </div>
+                            </div>
+
+                            <div class="row g-3 mt-2">
+                                <div class="col-md-6">
+                                    <label class="form-label">Assunto:</label>
+                                    <InputText class="form-control" @bind-Value="chamado.Assunto" />
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <label class="form-label">Serviço:</label>
+                                    <InputText class="form-control" @bind-Value="chamado.Servico" />
+                                </div>
+                            </div>
+
+                            <div class="row g-3 mt-2">
+                                <div class="col-md-6">
+                                    <label class="form-label">Data de Abertura:</label>
+                                    <InputDate class="form-control" @bind-Value="dataAbertura" />
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <label class="form-label">Hora de Abertura:</label>
+                                    <InputText class="form-control" @bind-Value="horaAbertura" placeholder="HH:mm" />
+                                </div>
+                            </div>
+
+                            <div class="row g-3 mt-2">
+                                <div class="col-md-6">
+                                    <label class="form-label">Data de Resolução:</label>
+                                    <InputDate class="form-control" @bind-Value="dataResolucao" />
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <label class="form-label">Hora de Resolução:</label>
+                                    <InputText class="form-control" @bind-Value="horaResolucao" placeholder="HH:mm" />
+                                </div>
+                            </div>
+
+                            <div class="row mt-4">
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-success me-2" disabled="@isSaving">
+                                        @if (isSaving)
+                                        {
+                                            <span class="spinner-border spinner-border-sm me-2" role="status"></span>
+                                            <span>Salvando...</span>
+                                        }
+                                        else
+                                        {
+                                            <i class="bi bi-check-circle me-2"></i>
+                                            <span>Salvar Alterações</span>
+                                        }
+                                    </button>
+                                    
+                                    <button type="button" class="btn btn-secondary" @onclick="VoltarParaChamados">
+                                        <i class="bi bi-x-circle me-2"></i>
+                                        Cancelar
+                                    </button>
+                                </div>
+                            </div>
+                        </EditForm>
+                    </div>
+                </div>
+            }
+
+            @if (!string.IsNullOrEmpty(mensagemStatus))
+            {
+                <div class="alert @(mensagemStatus.Contains("Erro") ? "alert-danger" : "alert-success") mt-3" role="alert">
+                    @mensagemStatus
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+@code {
+    [Parameter] public int Id { get; set; }
+
+    private Chamado? chamado;
+    private bool isLoading = true;
+    private bool isSaving = false;
+    private string mensagemStatus = string.Empty;
+
+    private DateTime dataAbertura;
+    private string horaAbertura = string.Empty;
+    private DateTime? dataResolucao;
+    private string horaResolucao = string.Empty;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await CarregarChamado();
+    }
+
+    private async Task CarregarChamado()
+    {
+        isLoading = true;
+        try
+        {
+            chamado = await ChamadoService.ObterChamadoPorIdAsync(Id);
+            
+            if (chamado != null)
+            {
+                dataAbertura = chamado.AbertoEm.Date;
+                horaAbertura = chamado.AbertoEm.ToString("HH:mm");
+                
+                if (chamado.ResolvidoEm.HasValue)
+                {
+                    dataResolucao = chamado.ResolvidoEm.Value.Date;
+                    horaResolucao = chamado.ResolvidoEm.Value.ToString("HH:mm");
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            mensagemStatus = $"❌ Erro ao carregar chamado: {ex.Message}";
+        }
+        finally
+        {
+            isLoading = false;
+        }
+    }
+
+    private async Task SalvarChamado()
+    {
+        if (chamado == null) return;
+
+        isSaving = true;
+        mensagemStatus = string.Empty;
+
+        try
+        {
+            if (TimeSpan.TryParse(horaAbertura, out var timeAbertura))
+            {
+                chamado.AbertoEm = dataAbertura.Add(timeAbertura);
+            }
+            else
+            {
+                chamado.AbertoEm = dataAbertura;
+            }
+
+            if (dataResolucao.HasValue)
+            {
+                if (TimeSpan.TryParse(horaResolucao, out var timeResolucao))
+                {
+                    chamado.ResolvidoEm = dataResolucao.Value.Add(timeResolucao);
+                }
+                else
+                {
+                    chamado.ResolvidoEm = dataResolucao.Value;
+                }
+            }
+            else
+            {
+                chamado.ResolvidoEm = null;
+            }
+
+            var sucesso = await ChamadoService.AtualizarChamadoAsync(chamado);
+            
+            if (sucesso)
+            {
+                mensagemStatus = "✅ Chamado atualizado com sucesso!";
+                VoltarParaChamados();
+            }
+            else
+            {
+                mensagemStatus = "❌ Erro ao salvar as alterações.";
+            }
+        }
+        catch (Exception ex)
+        {
+            mensagemStatus = $"❌ Erro ao salvar chamado: {ex.Message}";
+        }
+        finally
+        {
+            isSaving = false;
+        }
+    }
+
+    private void VoltarParaChamados()
+    {
+        NavigationManager.NavigateTo("/chamados");
+    }
+}
+

@@ -1,0 +1,348 @@
+@page "/chamados"
+@using ChamadoTrackerIA.Services
+@using ChamadoTrackerIA.Models
+@inject ChamadoService ChamadoService
+@inject IJSRuntime JSRuntime
+@inject NavigationManager NavigationManager
+@rendermode InteractiveServer
+
+<PageTitle>Visualizar Chamados - ChamadoTrackerIA</PageTitle>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h1>📊 Chamados Cadastrados</h1>
+                <div class="d-flex gap-2">
+                    <button class="btn btn-success" @onclick="ExportarCsv" disabled="@isExporting">
+                        @if (isExporting)
+                        {
+                            <span class="spinner-border spinner-border-sm me-2" role="status"></span>
+                            <span>Exportando...</span>
+                        }
+                        else
+                        {
+                            <i class="bi bi-download me-2"></i>
+                            <span>Exportar CSV (Mês Atual)</span>
+                        }
+                    </button>
+                    <button class="btn btn-primary" @onclick="IrParaInput">
+                        <i class="bi bi-plus-circle me-2"></i>
+                        Cadastrar Novos
+                    </button>
+                </div>
+            </div>
+
+            <!-- Filtros -->
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h5 class="mb-0">🔍 Filtros</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row g-3">
+                        <div class="col-md-3">
+                            <label class="form-label">Data Início:</label>
+                            <input type="date" class="form-control" @bind="dataInicio" @bind:format="yyyy-MM-dd" />
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label">Data Fim:</label>
+                            <input type="date" class="form-control" @bind="dataFim" @bind:format="yyyy-MM-dd" />
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label">Responsável:</label>
+                            <input type="text" class="form-control" @bind="filtroResponsavel" placeholder="Nome do responsável..." />
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label">Serviço:</label>
+                            <input type="text" class="form-control" @bind="filtroServico" placeholder="Tipo de serviço..." />
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-12">
+                            <button class="btn btn-outline-primary me-2" @onclick="AplicarFiltros">
+                                <i class="bi bi-funnel me-1"></i>
+                                Aplicar Filtros
+                            </button>
+                            <button class="btn btn-outline-secondary" @onclick="LimparFiltros">
+                                <i class="bi bi-x-circle me-1"></i>
+                                Limpar Filtros
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tabela de Chamados -->
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0">📋 Lista de Chamados (@chamados.Count)</h5>
+                </div>
+                <div class="card-body">
+                    @if (isLoading)
+                    {
+                        <div class="text-center py-4">
+                            <div class="spinner-border" role="status">
+                                <span class="visually-hidden">Carregando...</span>
+                            </div>
+                            <p class="mt-2">Carregando chamados...</p>
+                        </div>
+                    }
+                    else if (chamados.Any())
+                    {
+                        <div class="table-responsive">
+                            <table class="table table-striped table-hover">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th>Número</th>
+                                        <th>Título</th>
+                                        <th>Assunto</th>
+                                        <th>Serviço</th>
+                                        <th>Responsável</th>
+                                        <th>Aberto Em</th>
+                                        <th>Resolvido Em</th>
+                                        <th>Status</th>
+                                        <th>Ações</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var chamado in chamados)
+                                    {
+                                        <tr>
+                                            <td><span class="badge bg-primary">@chamado.Numero</span></td>
+                                            <td>
+                                                <div class="fw-bold">@chamado.Titulo</div>
+                                            </td>
+                                            <td>@chamado.Assunto</td>
+                                            <td><span class="badge bg-info">@chamado.Servico</span></td>
+                                            <td>@chamado.Responsavel</td>
+                                            <td>@chamado.AbertoEm.ToString("dd/MM/yyyy HH:mm")</td>
+                                            <td>@(chamado.ResolvidoEm?.ToString("dd/MM/yyyy HH:mm") ?? "-")</td>
+                                            <td>
+                                                @if (chamado.ResolvidoEm.HasValue)
+                                                {
+                                                    <span class="badge bg-success">Resolvido</span>
+                                                }
+                                                else
+                                                {
+                                                    <span class="badge bg-warning">Em Andamento</span>
+                                                }
+                                            </td>
+                                            <td>
+                                                <div class="btn-group" role="group">
+                                                    <button class="btn btn-sm btn-outline-primary" @onclick="() => EditarChamado(chamado.Id)" title="Editar">
+                                                        <i class="bi bi-pencil"></i>
+                                                    </button>
+                                                    <button class="btn btn-sm btn-outline-danger" @onclick="() => ConfirmarExclusao(chamado)" title="Excluir">
+                                                        <i class="bi bi-trash"></i>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="text-center py-5">
+                            <i class="bi bi-inbox display-1 text-muted"></i>
+                            <h4 class="text-muted mt-3">Nenhum chamado encontrado</h4>
+                            <p class="text-muted">Cadastre novos chamados ou ajuste os filtros.</p>
+                            <button class="btn btn-primary" @onclick="IrParaInput">
+                                <i class="bi bi-plus-circle me-2"></i>
+                                Cadastrar Primeiro Chamado
+                            </button>
+                        </div>
+                    }
+                </div>
+            </div>
+
+            @if (!string.IsNullOrEmpty(mensagemStatus))
+            {
+                <div class="alert @(mensagemStatus.Contains("Erro") ? "alert-danger" : "alert-success") mt-3" role="alert">
+                    @mensagemStatus
+                </div>
+            }
+
+            <!-- Modal de Confirmação de Exclusão -->
+            @if (chamadoParaExcluir != null)
+            {
+                <div class="modal fade show d-block" tabindex="-1" style="background-color: rgba(0,0,0,0.5);">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">⚠️ Confirmar Exclusão</h5>
+                            </div>
+                            <div class="modal-body">
+                                <p>Tem certeza que deseja excluir o chamado <strong>#@chamadoParaExcluir.Numero</strong>?</p>
+                                <p class="text-muted"><strong>Título:</strong> @chamadoParaExcluir.Titulo</p>
+                                <p class="text-danger"><small>⚠️ Esta ação não pode ser desfeita!</small></p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" @onclick="CancelarExclusao">
+                                    <i class="bi bi-x-circle me-1"></i>
+                                    Cancelar
+                                </button>
+                                <button type="button" class="btn btn-danger" @onclick="ExcluirChamado" disabled="@isExcluindo">
+                                    @if (isExcluindo)
+                                    {
+                                        <span class="spinner-border spinner-border-sm me-2" role="status"></span>
+                                        <span>Excluindo...</span>
+                                    }
+                                    else
+                                    {
+                                        <i class="bi bi-trash me-1"></i>
+                                        <span>Excluir</span>
+                                    }
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+@code {
+    private List<Chamado> chamados = new();
+    private bool isLoading = true;
+    private bool isExporting = false;
+    private bool isExcluindo = false;
+    private string mensagemStatus = string.Empty;
+    private Chamado? chamadoParaExcluir = null;
+
+    private DateTime? dataInicio;
+    private DateTime? dataFim;
+    private string filtroResponsavel = string.Empty;
+    private string filtroServico = string.Empty;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await CarregarChamados();
+    }
+
+    private async Task CarregarChamados()
+    {
+        isLoading = true;
+        try
+        {
+            chamados = await ChamadoService.ObterTodosChamadosAsync();
+        }
+        catch (Exception ex)
+        {
+            mensagemStatus = $"❌ Erro ao carregar chamados: {ex.Message}";
+        }
+        finally
+        {
+            isLoading = false;
+        }
+    }
+
+    private async Task AplicarFiltros()
+    {
+        isLoading = true;
+        try
+        {
+            chamados = await ChamadoService.ObterChamadosFiltradosAsync(
+                dataInicio, 
+                dataFim, 
+                string.IsNullOrWhiteSpace(filtroResponsavel) ? null : filtroResponsavel,
+                string.IsNullOrWhiteSpace(filtroServico) ? null : filtroServico
+            );
+            mensagemStatus = $"✅ Filtros aplicados. {chamados.Count} chamado(s) encontrado(s).";
+        }
+        catch (Exception ex)
+        {
+            mensagemStatus = $"❌ Erro ao aplicar filtros: {ex.Message}";
+        }
+        finally
+        {
+            isLoading = false;
+        }
+    }
+
+    private async Task LimparFiltros()
+    {
+        dataInicio = null;
+        dataFim = null;
+        filtroResponsavel = string.Empty;
+        filtroServico = string.Empty;
+        await CarregarChamados();
+        mensagemStatus = "🔄 Filtros limpos.";
+    }
+
+    private async Task ExportarCsv()
+    {
+        isExporting = true;
+        try
+        {
+            var csvBytes = await ChamadoService.ExportarCsvMesAtualAsync();
+            var fileName = $"chamados_{DateTime.Now:yyyy_MM}.csv";
+            
+            await JSRuntime.InvokeVoidAsync("downloadFile", fileName, Convert.ToBase64String(csvBytes));
+            mensagemStatus = $"✅ Arquivo {fileName} exportado com sucesso!";
+        }
+        catch (Exception ex)
+        {
+            mensagemStatus = $"❌ Erro ao exportar CSV: {ex.Message}";
+        }
+        finally
+        {
+            isExporting = false;
+        }
+    }
+
+    private void IrParaInput()
+    {
+        NavigationManager.NavigateTo("/input");
+    }
+
+    private void EditarChamado(int id)
+    {
+        NavigationManager.NavigateTo($"/editar/{id}");
+    }
+
+    private void ConfirmarExclusao(Chamado chamado)
+    {
+        chamadoParaExcluir = chamado;
+        mensagemStatus = string.Empty;
+    }
+
+    private void CancelarExclusao()
+    {
+        chamadoParaExcluir = null;
+    }
+
+    private async Task ExcluirChamado()
+    {
+        if (chamadoParaExcluir == null) return;
+
+        isExcluindo = true;
+        try
+        {
+            var sucesso = await ChamadoService.ExcluirChamadoAsync(chamadoParaExcluir.Id);
+            
+            if (sucesso)
+            {
+                mensagemStatus = $"✅ Chamado #{chamadoParaExcluir.Numero} excluído com sucesso!";
+                chamadoParaExcluir = null;
+                await CarregarChamados();
+            }
+            else
+            {
+                mensagemStatus = "❌ Erro ao excluir o chamado.";
+            }
+        }
+        catch (Exception ex)
+        {
+            mensagemStatus = $"❌ Erro ao excluir chamado: {ex.Message}";
+        }
+        finally
+        {
+            isExcluindo = false;
+        }
+    }
+}
+

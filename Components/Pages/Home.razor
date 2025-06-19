@@ -1,0 +1,96 @@
+@page "/"
+
+<PageTitle>ChamadoTrackerIA - Home</PageTitle>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <!-- Hero Section -->
+            <div class="jumbotron bg-primary text-white rounded p-5 mb-5">
+                <div class="text-center">
+                    <h1 class="display-4 fw-bold">GerenciadorDeChamadosComIA</h1>
+                    <div class="d-flex gap-3 justify-content-center">
+                        <a class="btn btn-light btn-lg" href="/input">
+                            <i class="bi bi-plus-circle me-2"></i>
+                            Cadastrar Chamados
+                        </a>
+                        <a class="btn btn-outline-light btn-lg" href="/chamados">
+                            <i class="bi bi-list-ul me-2"></i>
+                            Visualizar Chamados
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features -->
+            <div class="row g-4 mb-5">
+                <div class="col-md-4">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <div class="display-1 text-primary mb-3">🧠</div>
+                            <h5 class="card-title">Processamento Inteligente</h5>
+                            <p class="card-text">Cole texto desorganizado e nossa IA transforma automaticamente em dados estruturados de chamados.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <div class="display-1 text-success mb-3">📊</div>
+                            <h5 class="card-title">Visualização Completa</h5>
+                            <p class="card-text">Visualize todos os chamados em uma tabela organizada com filtros avançados por data, responsável e serviço.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <div class="display-1 text-info mb-3">📈</div>
+                            <h5 class="card-title">Exportação CSV</h5>
+                            <p class="card-text">Exporte relatórios mensais em formato CSV para análise externa e integração com outras ferramentas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- How it works -->
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="mb-0">🚀 Como Funciona</h3>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h5>1. Cole o Texto</h5>
+                            <p>Cole o texto com os chamados em formato semi-tabular diretamente na área de input.</p>
+                            
+                            <h5>2. Processamento IA</h5>
+                            <p>IA identifica automaticamente os campos: número, título, assunto, serviço, responsável e datas.</p>
+                            
+                            <h5>3. Visualize e Exporte</h5>
+                            <p>Visualize os dados organizados e exporte relatórios mensais em CSV.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .jumbotron {
+        background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+    }
+    
+    .display-1 {
+        font-size: 4rem;
+    }
+    
+    .card {
+        transition: transform 0.2s;
+    }
+    
+    .card:hover {
+        transform: translateY(-5px);
+    }
+</style>
