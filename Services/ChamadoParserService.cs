@@ -82,7 +82,8 @@ namespace ChamadoTrackerIA.Services
                 {
                     if (DateTime.TryParseExact(dataMatch.Groups[1].Value, "dd/MM/yyyy HH:mm",
                         System.Globalization.CultureInfo.InvariantCulture,
-                        System.Globalization.DateTimeStyles.None, out DateTime data))
+                        System.Globalization.DateTimeStyles.AssumeUniversal | System.Globalization.DateTimeStyles.AdjustToUniversal,
+                        out DateTime data))
                     {
                         if (chamado.AbertoEm == default(DateTime))
                         {
@@ -117,7 +118,7 @@ namespace ChamadoTrackerIA.Services
                 chamado.Responsavel = "Não informado";
 
             if (chamado.AbertoEm == default(DateTime))
-                chamado.AbertoEm = DateTime.Now;
+                chamado.AbertoEm = DateTime.UtcNow;
 
             return chamado;
         }
