@@ -96,8 +96,8 @@ namespace ChamadoTrackerIA.Services
 
         public async Task<byte[]> ExportarCsvAsync(int mes, int ano)
         {
-            var dataInicio = new DateTime(ano, mes, 1);
-            var dataFim = dataInicio.AddMonths(1).AddDays(-1);
+            var dataInicio = new DateTime(ano, mes, 1, 0, 0, 0, DateTimeKind.Utc);
+            var dataFim = DateTime.SpecifyKind(dataInicio.AddMonths(1).AddDays(-1), DateTimeKind.Utc);
 
             var chamados = await _context.Chamados
                 .Where(c => c.AbertoEm >= dataInicio && c.AbertoEm <= dataFim)
@@ -117,9 +117,10 @@ namespace ChamadoTrackerIA.Services
 
         public async Task<byte[]> ExportarCsvMesAtualAsync()
         {
-            var agora = DateTime.Now;
+            var agora = DateTime.UtcNow;
             return await ExportarCsvAsync(agora.Month, agora.Year);
         }
+
     }
 }
 
