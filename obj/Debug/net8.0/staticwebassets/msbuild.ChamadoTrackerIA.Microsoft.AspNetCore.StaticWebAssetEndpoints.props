@@ -40,13 +40,13 @@
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\ChamadoTrackerIA.dkak9rli0t.bundle.scp.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-g8gaxCQur\u002BecB1kkMlRjxMiGzqZPYe09YRcL9qSqAg0="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"5915"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022g8gaxCQur\u002BecB1kkMlRjxMiGzqZPYe09YRcL9qSqAg0=\u0022"},{"Name":"Last-Modified","Value":"Thu, 19 Jun 2025 17:38:33 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"5915"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022g8gaxCQur\u002BecB1kkMlRjxMiGzqZPYe09YRcL9qSqAg0=\u0022"},{"Name":"Last-Modified","Value":"Mon, 23 Jun 2025 12:41:34 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/ChamadoTrackerIA/ChamadoTrackerIA.dkak9rli0t.bundle.scp.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\ChamadoTrackerIA.dkak9rli0t.bundle.scp.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"dkak9rli0t"},{"Name":"integrity","Value":"sha256-g8gaxCQur\u002BecB1kkMlRjxMiGzqZPYe09YRcL9qSqAg0="},{"Name":"label","Value":"_content/ChamadoTrackerIA/ChamadoTrackerIA.bundle.scp.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"5915"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022g8gaxCQur\u002BecB1kkMlRjxMiGzqZPYe09YRcL9qSqAg0=\u0022"},{"Name":"Last-Modified","Value":"Thu, 19 Jun 2025 17:38:33 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"5915"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022g8gaxCQur\u002BecB1kkMlRjxMiGzqZPYe09YRcL9qSqAg0=\u0022"},{"Name":"Last-Modified","Value":"Mon, 23 Jun 2025 12:41:34 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/ChamadoTrackerIA/favicon.ifv42okdf2.png">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\favicon.png'))</AssetFile>

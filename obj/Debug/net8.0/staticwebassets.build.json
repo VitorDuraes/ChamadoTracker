@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "TyGxZ04Ubm+PoIkERwC5e0E4vrml2bs5bTtCigKMXRU=",
+  "Hash": "3zksTWFXsmSuyZEtoL/PzcXYZxP5nmdXRpE25Fv3rFE=",
   "Source": "ChamadoTrackerIA",
   "BasePath": "_content/ChamadoTrackerIA",
   "Mode": "Default",
@@ -8,21 +8,21 @@
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [
     {
-      "Name": "ChamadoTrackerIA/wwwroot",
+      "Name": "ChamadoTrackerIA\\wwwroot",
       "Source": "ChamadoTrackerIA",
-      "ContentRoot": "/mnt/s/ChamadoTrackerIA/wwwroot/",
+      "ContentRoot": "S:\\ChamadoTrackerIA\\wwwroot\\",
       "BasePath": "_content/ChamadoTrackerIA",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "/mnt/s/ChamadoTrackerIA/obj/Debug/net8.0/scopedcss/bundle/ChamadoTrackerIA.styles.css",
+      "Identity": "S:\\ChamadoTrackerIA\\obj\\Debug\\net8.0\\scopedcss\\bundle\\ChamadoTrackerIA.styles.css",
       "SourceId": "ChamadoTrackerIA",
       "SourceType": "Computed",
-      "ContentRoot": "/mnt/s/ChamadoTrackerIA/obj/Debug/net8.0/scopedcss/bundle/",
+      "ContentRoot": "S:\\ChamadoTrackerIA\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
       "BasePath": "_content/ChamadoTrackerIA",
-      "RelativePath": "ChamadoTrackerIA.styles.css",
+      "RelativePath": "ChamadoTrackerIA#[.{fingerprint}]?.styles.css",
       "AssetKind": "All",
       "AssetMode": "CurrentProject",
       "AssetRole": "Primary",
@@ -31,17 +31,19 @@
       "RelatedAsset": "",
       "AssetTraitName": "ScopedCss",
       "AssetTraitValue": "ApplicationBundle",
+      "Fingerprint": "dkak9rli0t",
+      "Integrity": "g8gaxCQur+ecB1kkMlRjxMiGzqZPYe09YRcL9qSqAg0=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "/mnt/s/ChamadoTrackerIA/obj/Debug/net8.0/scopedcss/bundle/ChamadoTrackerIA.styles.css"
+      "OriginalItemSpec": "S:\\ChamadoTrackerIA\\obj\\Debug\\net8.0\\scopedcss\\bundle\\ChamadoTrackerIA.styles.css"
     },
     {
-      "Identity": "/mnt/s/ChamadoTrackerIA/obj/Debug/net8.0/scopedcss/projectbundle/ChamadoTrackerIA.bundle.scp.css",
+      "Identity": "S:\\ChamadoTrackerIA\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\ChamadoTrackerIA.bundle.scp.css",
       "SourceId": "ChamadoTrackerIA",
       "SourceType": "Computed",
-      "ContentRoot": "/mnt/s/ChamadoTrackerIA/obj/Debug/net8.0/scopedcss/projectbundle/",
+      "ContentRoot": "S:\\ChamadoTrackerIA\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/ChamadoTrackerIA",
-      "RelativePath": "ChamadoTrackerIA.bundle.scp.css",
+      "RelativePath": "ChamadoTrackerIA#[.{fingerprint}]!.bundle.scp.css",
       "AssetKind": "All",
       "AssetMode": "Reference",
       "AssetRole": "Primary",
@@ -50,104 +52,692 @@
       "RelatedAsset": "",
       "AssetTraitName": "ScopedCss",
       "AssetTraitValue": "ProjectBundle",
+      "Fingerprint": "dkak9rli0t",
+      "Integrity": "g8gaxCQur+ecB1kkMlRjxMiGzqZPYe09YRcL9qSqAg0=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "/mnt/s/ChamadoTrackerIA/obj/Debug/net8.0/scopedcss/projectbundle/ChamadoTrackerIA.bundle.scp.css"
+      "OriginalItemSpec": "S:\\ChamadoTrackerIA\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\ChamadoTrackerIA.bundle.scp.css"
     },
     {
-      "Identity": "/mnt/s/ChamadoTrackerIA/wwwroot/app.css",
+      "Identity": "S:\\ChamadoTrackerIA\\wwwroot\\app.css",
       "SourceId": "ChamadoTrackerIA",
       "SourceType": "Discovered",
-      "ContentRoot": "/mnt/s/ChamadoTrackerIA/wwwroot/",
+      "ContentRoot": "S:\\ChamadoTrackerIA\\wwwroot\\",
       "BasePath": "_content/ChamadoTrackerIA",
-      "RelativePath": "app.css",
+      "RelativePath": "app#[.{fingerprint}]?.css",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeBehavior": "",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
+      "Fingerprint": "da95v2qkru",
+      "Integrity": "u9qEka1auR7E3rd3/8/j8hkQdSOYj9bRJ4nYiFDR1sE=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/app.css"
+      "OriginalItemSpec": "wwwroot\\app.css"
     },
     {
-      "Identity": "/mnt/s/ChamadoTrackerIA/wwwroot/bootstrap/bootstrap.min.css",
+      "Identity": "S:\\ChamadoTrackerIA\\wwwroot\\bootstrap\\bootstrap.min.css",
       "SourceId": "ChamadoTrackerIA",
       "SourceType": "Discovered",
-      "ContentRoot": "/mnt/s/ChamadoTrackerIA/wwwroot/",
+      "ContentRoot": "S:\\ChamadoTrackerIA\\wwwroot\\",
       "BasePath": "_content/ChamadoTrackerIA",
-      "RelativePath": "bootstrap/bootstrap.min.css",
+      "RelativePath": "bootstrap/bootstrap.min#[.{fingerprint}]?.css",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeBehavior": "",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
+      "Fingerprint": "bpk8xqwxhs",
+      "Integrity": "z8OR40MowJ8GgK6P89Y+hiJK5+cclzFHzLhFQLL92bg=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/bootstrap/bootstrap.min.css"
+      "OriginalItemSpec": "wwwroot\\bootstrap\\bootstrap.min.css"
     },
     {
-      "Identity": "/mnt/s/ChamadoTrackerIA/wwwroot/bootstrap/bootstrap.min.css.map",
+      "Identity": "S:\\ChamadoTrackerIA\\wwwroot\\bootstrap\\bootstrap.min.css.map",
       "SourceId": "ChamadoTrackerIA",
       "SourceType": "Discovered",
-      "ContentRoot": "/mnt/s/ChamadoTrackerIA/wwwroot/",
+      "ContentRoot": "S:\\ChamadoTrackerIA\\wwwroot\\",
       "BasePath": "_content/ChamadoTrackerIA",
-      "RelativePath": "bootstrap/bootstrap.min.css.map",
+      "RelativePath": "bootstrap/bootstrap.min.css#[.{fingerprint}]?.map",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeBehavior": "",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
+      "Fingerprint": "8inm30yfxf",
+      "Integrity": "gBwg2tmA0Ci2u54gMF1jNCVku6vznarkLS6D76htNNQ=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/bootstrap/bootstrap.min.css.map"
+      "OriginalItemSpec": "wwwroot\\bootstrap\\bootstrap.min.css.map"
     },
     {
-      "Identity": "/mnt/s/ChamadoTrackerIA/wwwroot/favicon.png",
+      "Identity": "S:\\ChamadoTrackerIA\\wwwroot\\favicon.png",
       "SourceId": "ChamadoTrackerIA",
       "SourceType": "Discovered",
-      "ContentRoot": "/mnt/s/ChamadoTrackerIA/wwwroot/",
+      "ContentRoot": "S:\\ChamadoTrackerIA\\wwwroot\\",
       "BasePath": "_content/ChamadoTrackerIA",
-      "RelativePath": "favicon.png",
+      "RelativePath": "favicon#[.{fingerprint}]?.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeBehavior": "",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
+      "Fingerprint": "ifv42okdf2",
+      "Integrity": "4mWsDy3aHl36ZbGt8zByK7Pvd4kRUoNgTYzRnwmPHwg=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/favicon.png"
+      "OriginalItemSpec": "wwwroot\\favicon.png"
     },
     {
-      "Identity": "/mnt/s/ChamadoTrackerIA/wwwroot/js/site.js",
+      "Identity": "S:\\ChamadoTrackerIA\\wwwroot\\js\\site.js",
       "SourceId": "ChamadoTrackerIA",
       "SourceType": "Discovered",
-      "ContentRoot": "/mnt/s/ChamadoTrackerIA/wwwroot/",
+      "ContentRoot": "S:\\ChamadoTrackerIA\\wwwroot\\",
       "BasePath": "_content/ChamadoTrackerIA",
-      "RelativePath": "js/site.js",
+      "RelativePath": "js/site#[.{fingerprint}]?.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeBehavior": "",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
+      "Fingerprint": "y1708548nk",
+      "Integrity": "SmAYv6ewRl3k6w/Vaq+lPXOu1AG87LsLvFzBsFQv4jM=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/js/site.js"
+      "OriginalItemSpec": "wwwroot\\js\\site.js"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "app.css",
+      "AssetFile": "S:\\ChamadoTrackerIA\\wwwroot\\app.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2591"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"u9qEka1auR7E3rd3/8/j8hkQdSOYj9bRJ4nYiFDR1sE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 19 Jun 2025 17:24:31 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-u9qEka1auR7E3rd3/8/j8hkQdSOYj9bRJ4nYiFDR1sE="
+        }
+      ]
+    },
+    {
+      "Route": "app.da95v2qkru.css",
+      "AssetFile": "S:\\ChamadoTrackerIA\\wwwroot\\app.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2591"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"u9qEka1auR7E3rd3/8/j8hkQdSOYj9bRJ4nYiFDR1sE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 19 Jun 2025 17:24:31 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "da95v2qkru"
+        },
+        {
+          "Name": "label",
+          "Value": "app.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-u9qEka1auR7E3rd3/8/j8hkQdSOYj9bRJ4nYiFDR1sE="
+        }
+      ]
+    },
+    {
+      "Route": "bootstrap/bootstrap.min.bpk8xqwxhs.css",
+      "AssetFile": "S:\\ChamadoTrackerIA\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "162720"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"z8OR40MowJ8GgK6P89Y+hiJK5+cclzFHzLhFQLL92bg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 19 Jun 2025 17:24:31 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "bpk8xqwxhs"
+        },
+        {
+          "Name": "label",
+          "Value": "bootstrap/bootstrap.min.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-z8OR40MowJ8GgK6P89Y+hiJK5+cclzFHzLhFQLL92bg="
+        }
+      ]
+    },
+    {
+      "Route": "bootstrap/bootstrap.min.css",
+      "AssetFile": "S:\\ChamadoTrackerIA\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "162720"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"z8OR40MowJ8GgK6P89Y+hiJK5+cclzFHzLhFQLL92bg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 19 Jun 2025 17:24:31 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-z8OR40MowJ8GgK6P89Y+hiJK5+cclzFHzLhFQLL92bg="
+        }
+      ]
+    },
+    {
+      "Route": "bootstrap/bootstrap.min.css.8inm30yfxf.map",
+      "AssetFile": "S:\\ChamadoTrackerIA\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "449111"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"gBwg2tmA0Ci2u54gMF1jNCVku6vznarkLS6D76htNNQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 19 Jun 2025 17:24:31 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "8inm30yfxf"
+        },
+        {
+          "Name": "label",
+          "Value": "bootstrap/bootstrap.min.css.map"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-gBwg2tmA0Ci2u54gMF1jNCVku6vznarkLS6D76htNNQ="
+        }
+      ]
+    },
+    {
+      "Route": "bootstrap/bootstrap.min.css.map",
+      "AssetFile": "S:\\ChamadoTrackerIA\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "449111"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"gBwg2tmA0Ci2u54gMF1jNCVku6vznarkLS6D76htNNQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 19 Jun 2025 17:24:31 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-gBwg2tmA0Ci2u54gMF1jNCVku6vznarkLS6D76htNNQ="
+        }
+      ]
+    },
+    {
+      "Route": "ChamadoTrackerIA.bundle.scp.css",
+      "AssetFile": "S:\\ChamadoTrackerIA\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\ChamadoTrackerIA.bundle.scp.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5915"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"g8gaxCQur+ecB1kkMlRjxMiGzqZPYe09YRcL9qSqAg0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Jun 2025 12:41:34 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-g8gaxCQur+ecB1kkMlRjxMiGzqZPYe09YRcL9qSqAg0="
+        }
+      ]
+    },
+    {
+      "Route": "ChamadoTrackerIA.dkak9rli0t.bundle.scp.css",
+      "AssetFile": "S:\\ChamadoTrackerIA\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\ChamadoTrackerIA.bundle.scp.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5915"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"g8gaxCQur+ecB1kkMlRjxMiGzqZPYe09YRcL9qSqAg0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Jun 2025 12:41:34 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "dkak9rli0t"
+        },
+        {
+          "Name": "label",
+          "Value": "ChamadoTrackerIA.bundle.scp.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-g8gaxCQur+ecB1kkMlRjxMiGzqZPYe09YRcL9qSqAg0="
+        }
+      ]
+    },
+    {
+      "Route": "ChamadoTrackerIA.dkak9rli0t.styles.css",
+      "AssetFile": "S:\\ChamadoTrackerIA\\obj\\Debug\\net8.0\\scopedcss\\bundle\\ChamadoTrackerIA.styles.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5915"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"g8gaxCQur+ecB1kkMlRjxMiGzqZPYe09YRcL9qSqAg0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Jun 2025 12:41:34 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "dkak9rli0t"
+        },
+        {
+          "Name": "label",
+          "Value": "ChamadoTrackerIA.styles.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-g8gaxCQur+ecB1kkMlRjxMiGzqZPYe09YRcL9qSqAg0="
+        }
+      ]
+    },
+    {
+      "Route": "ChamadoTrackerIA.styles.css",
+      "AssetFile": "S:\\ChamadoTrackerIA\\obj\\Debug\\net8.0\\scopedcss\\bundle\\ChamadoTrackerIA.styles.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5915"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"g8gaxCQur+ecB1kkMlRjxMiGzqZPYe09YRcL9qSqAg0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Jun 2025 12:41:34 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-g8gaxCQur+ecB1kkMlRjxMiGzqZPYe09YRcL9qSqAg0="
+        }
+      ]
+    },
+    {
+      "Route": "favicon.ifv42okdf2.png",
+      "AssetFile": "S:\\ChamadoTrackerIA\\wwwroot\\favicon.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1148"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4mWsDy3aHl36ZbGt8zByK7Pvd4kRUoNgTYzRnwmPHwg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 19 Jun 2025 17:24:31 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ifv42okdf2"
+        },
+        {
+          "Name": "label",
+          "Value": "favicon.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-4mWsDy3aHl36ZbGt8zByK7Pvd4kRUoNgTYzRnwmPHwg="
+        }
+      ]
+    },
+    {
+      "Route": "favicon.png",
+      "AssetFile": "S:\\ChamadoTrackerIA\\wwwroot\\favicon.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1148"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4mWsDy3aHl36ZbGt8zByK7Pvd4kRUoNgTYzRnwmPHwg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 19 Jun 2025 17:24:31 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-4mWsDy3aHl36ZbGt8zByK7Pvd4kRUoNgTYzRnwmPHwg="
+        }
+      ]
+    },
+    {
+      "Route": "js/site.js",
+      "AssetFile": "S:\\ChamadoTrackerIA\\wwwroot\\js\\site.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "276"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"SmAYv6ewRl3k6w/Vaq+lPXOu1AG87LsLvFzBsFQv4jM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 19 Jun 2025 17:28:37 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-SmAYv6ewRl3k6w/Vaq+lPXOu1AG87LsLvFzBsFQv4jM="
+        }
+      ]
+    },
+    {
+      "Route": "js/site.y1708548nk.js",
+      "AssetFile": "S:\\ChamadoTrackerIA\\wwwroot\\js\\site.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "276"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"SmAYv6ewRl3k6w/Vaq+lPXOu1AG87LsLvFzBsFQv4jM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 19 Jun 2025 17:28:37 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "y1708548nk"
+        },
+        {
+          "Name": "label",
+          "Value": "js/site.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-SmAYv6ewRl3k6w/Vaq+lPXOu1AG87LsLvFzBsFQv4jM="
+        }
+      ]
     }
   ]
 }

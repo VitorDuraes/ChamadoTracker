@@ -11,7 +11,7 @@ builder.Services.AddRazorComponents()
 
 // Add Entity Framework
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection") ?? "Data Source=chamados.db"));
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // Add custom services
 builder.Services.AddScoped<ChamadoParserService>();
