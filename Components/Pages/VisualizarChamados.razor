@@ -67,6 +67,10 @@
                                 <i class="bi bi-x-circle me-1"></i>
                                 Limpar Filtros
                             </button>
+                            <button class="btn btn-danger ms-2" @onclick="ExcluirTodosChamados">
+                             <i class="bi bi-trash-fill ms-1"></i>
+                                Excluir Todos os Chamados
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -210,6 +214,7 @@
     private bool isLoading = true;
     private bool isExporting = false;
     private bool isExcluindo = false;
+    private bool isExcluindoTodos = false;
     private string mensagemStatus = string.Empty;
     private Chamado? chamadoParaExcluir = null;
 
@@ -342,6 +347,34 @@
         finally
         {
             isExcluindo = false;
+        }
+    }
+
+    private async Task ExcluirTodosChamados()
+{
+        isExcluindoTodos = true;
+        mensagemStatus = string.Empty;
+
+        try
+        {
+            var sucesso = await ChamadoService.ExcluirTodosChamadosAsync();
+            if (sucesso)
+            {
+                mensagemStatus = "✅ Todos os chamados foram excluídos com sucesso!";
+                chamados.Clear();
+            }
+            else
+            {
+                mensagemStatus = "❌ Erro ao excluir todos os chamados.";
+            }
+        }
+        catch (Exception ex)
+        {
+            mensagemStatus = $"❌ Erro ao excluir todos os chamados: {ex.Message}";
+        }
+        finally
+        {
+            isExcluindoTodos = false;
         }
     }
 }

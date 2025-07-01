@@ -17,53 +17,51 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ChamadoTrackerIA
 build_property.RootNamespace = ChamadoTrackerIA
-build_property.ProjectDir = S:\ChamadoTrackerIA\
+build_property.ProjectDir = /mnt/s/ChamadoTrackerIA/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = S:\ChamadoTrackerIA
+build_property.MSBuildProjectDirectory = /mnt/s/ChamadoTrackerIA
 build_property._RazorSourceGeneratorDebug = 
-build_property.EffectiveAnalysisLevelStyle = 8.0
-build_property.EnableCodeStyleSeverity = 
 
-[S:/ChamadoTrackerIA/Components/App.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBcHAucmF6b3I=
+[/mnt/s/ChamadoTrackerIA/Components/App.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9BcHAucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[S:/ChamadoTrackerIA/Components/Pages/EditarChamado.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFZGl0YXJDaGFtYWRvLnJhem9y
+[/mnt/s/ChamadoTrackerIA/Components/Pages/EditarChamado.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9FZGl0YXJDaGFtYWRvLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[S:/ChamadoTrackerIA/Components/Pages/Error.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFcnJvci5yYXpvcg==
+[/mnt/s/ChamadoTrackerIA/Components/Pages/Error.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9FcnJvci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[S:/ChamadoTrackerIA/Components/Pages/Home.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xIb21lLnJhem9y
+[/mnt/s/ChamadoTrackerIA/Components/Pages/Home.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9Ib21lLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[S:/ChamadoTrackerIA/Components/Pages/InputChamados.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xJbnB1dENoYW1hZG9zLnJhem9y
+[/mnt/s/ChamadoTrackerIA/Components/Pages/InputChamados.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9JbnB1dENoYW1hZG9zLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[S:/ChamadoTrackerIA/Components/Pages/VisualizarChamados.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xWaXN1YWxpemFyQ2hhbWFkb3MucmF6b3I=
+[/mnt/s/ChamadoTrackerIA/Components/Pages/VisualizarChamados.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9WaXN1YWxpemFyQ2hhbWFkb3MucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[S:/ChamadoTrackerIA/Components/Routes.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xSb3V0ZXMucmF6b3I=
+[/mnt/s/ChamadoTrackerIA/Components/Routes.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9Sb3V0ZXMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[S:/ChamadoTrackerIA/Components/_Imports.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xfSW1wb3J0cy5yYXpvcg==
+[/mnt/s/ChamadoTrackerIA/Components/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9fSW1wb3J0cy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[S:/ChamadoTrackerIA/Components/Layout/MainLayout.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTWFpbkxheW91dC5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = b-25rw97upoi
+[/mnt/s/ChamadoTrackerIA/Components/Layout/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9MYXlvdXQvTWFpbkxheW91dC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-c99vy33x6z
 
-[S:/ChamadoTrackerIA/Components/Layout/NavMenu.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTmF2TWVudS5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = b-7hyez4hyj2
+[/mnt/s/ChamadoTrackerIA/Components/Layout/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9MYXlvdXQvTmF2TWVudS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-3nmg75au8w

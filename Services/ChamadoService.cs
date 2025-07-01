@@ -1,7 +1,15 @@
-using Microsoft.EntityFrameworkCore;
-using ChamadoTrackerIA.Data;
-using ChamadoTrackerIA.Models;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using CsvHelper;
+using CsvHelper.Configuration;
+using ChamadoTrackerIA.Dtos;
+using ChamadoTrackerIA.Models;
+using ChamadoTrackerIA.Data;
+
 
 namespace ChamadoTrackerIA.Services
 {
@@ -94,25 +102,68 @@ namespace ChamadoTrackerIA.Services
             }
         }
 
+        public async Task<bool> ExcluirTodosChamadosAsync()
+        {
+            try
+            {
+                _context.Chamados.RemoveRange(_context.Chamados);
+                await _context.SaveChangesAsync();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         public async Task<byte[]> ExportarCsvAsync(int mes, int ano)
         {
-            var dataInicio = new DateTime(ano, mes, 1, 0, 0, 0, DateTimeKind.Utc);
-            var dataFim = DateTime.SpecifyKind(dataInicio.AddMonths(1).AddDays(-1), DateTimeKind.Utc);
+            var localDataInicio = new DateTime(ano, mes, 1, 0, 0, 0, DateTimeKind.Local);
+            var localDataFim = localDataInicio.AddMonths(1).AddTicks(-1);
+
+            var dataInicio = TimeZoneInfo.ConvertTimeToUtc(localDataInicio);
+            var dataFim = TimeZoneInfo.ConvertTimeToUtc(localDataFim);
+
 
             var chamados = await _context.Chamados
-                .Where(c => c.AbertoEm >= dataInicio && c.AbertoEm <= dataFim)
+                //.Where(c => c.AbertoEm >= dataInicio && c.AbertoEm <= dataFim)
                 .OrderBy(c => c.AbertoEm)
                 .ToListAsync();
+                foreach (var c in chamados)
+                {
+                    Console.WriteLine($"AbertoEm (UTC): {c.AbertoEm:o}");
+                }
 
-            var csv = new StringBuilder();
-            csv.AppendLine("Numero;Titulo;Assunto;Servico;Responsavel;AbertoEm;ResolvidoEm");
 
-            foreach (var chamado in chamados)
-            {
-                csv.AppendLine($"\"{chamado.Numero}\";\"{chamado.Titulo}\";\"{chamado.Assunto}\";\"{chamado.Servico}\";\"{chamado.Responsavel}\";\"{chamado.AbertoEm:dd/MM/yyyy HH:mm}\";\"{chamado.ResolvidoEm?.ToString("dd/MM/yyyy HH:mm") ?? ""}\"");
-            }
+                var chamadosDto = chamados.Select(c => new ChamadoCsvDto
+                {
+                    Id = c.Id,
+                    Numero = c.Numero,
+                    Titulo = c.Titulo,
+                    Assunto = c.Assunto,
+                    Servico = c.Servico,
+                    Responsavel = c.Responsavel,
+                    AbertoEm = c.AbertoEm.ToString("dd/MM/yyyy HH:mm"),
+                    ResolvidoEm = c.ResolvidoEm?.ToString("dd/MM/yyyy HH:mm")
 
-            return Encoding.UTF8.GetPreamble().Concat(Encoding.UTF8.GetBytes(csv.ToString())).ToArray();
+                }).ToList();
+
+                using var memoryStream = new MemoryStream();
+                using var writer = new StreamWriter(memoryStream, new UTF8Encoding(true));
+                using var csv = new CsvWriter(writer, new CsvConfiguration(CultureInfo.InvariantCulture)
+                {
+                    Delimiter = ";"
+                });
+                csv.WriteHeader<ChamadoCsvDto>();
+                await csv.NextRecordAsync();
+
+                foreach (var chamado in chamadosDto)
+                {
+                    csv.WriteRecord(chamado);
+                    await csv.NextRecordAsync();
+                }
+                await writer.FlushAsync();
+                return memoryStream.ToArray();
         }
 
         public async Task<byte[]> ExportarCsvMesAtualAsync()

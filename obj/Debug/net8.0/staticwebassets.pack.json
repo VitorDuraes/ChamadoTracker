@@ -1,47 +1,43 @@
 {
   "Files": [
     {
-      "Id": "S:\\ChamadoTrackerIA\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\ChamadoTrackerIA.bundle.scp.css",
-      "PackagePath": "staticwebassets\\ChamadoTrackerIA.dkak9rli0t.bundle.scp.css"
+      "Id": "/mnt/s/ChamadoTrackerIA/obj/Debug/net8.0/scopedcss/projectbundle/ChamadoTrackerIA.bundle.scp.css",
+      "PackagePath": "staticwebassets/ChamadoTrackerIA.bundle.scp.css"
     },
     {
-      "Id": "S:\\ChamadoTrackerIA\\wwwroot\\app.css",
-      "PackagePath": "staticwebassets\\app.css"
+      "Id": "/mnt/s/ChamadoTrackerIA/wwwroot/app.css",
+      "PackagePath": "staticwebassets/app.css"
     },
     {
-      "Id": "S:\\ChamadoTrackerIA\\wwwroot\\bootstrap\\bootstrap.min.css",
-      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css"
+      "Id": "/mnt/s/ChamadoTrackerIA/wwwroot/bootstrap/bootstrap.min.css",
+      "PackagePath": "staticwebassets/bootstrap/bootstrap.min.css"
     },
     {
-      "Id": "S:\\ChamadoTrackerIA\\wwwroot\\bootstrap\\bootstrap.min.css.map",
-      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css.map"
+      "Id": "/mnt/s/ChamadoTrackerIA/wwwroot/bootstrap/bootstrap.min.css.map",
+      "PackagePath": "staticwebassets/bootstrap/bootstrap.min.css.map"
     },
     {
-      "Id": "S:\\ChamadoTrackerIA\\wwwroot\\favicon.png",
-      "PackagePath": "staticwebassets\\favicon.png"
+      "Id": "/mnt/s/ChamadoTrackerIA/wwwroot/favicon.png",
+      "PackagePath": "staticwebassets/favicon.png"
     },
     {
-      "Id": "S:\\ChamadoTrackerIA\\wwwroot\\js\\site.js",
-      "PackagePath": "staticwebassets\\js\\site.js"
+      "Id": "/mnt/s/ChamadoTrackerIA/wwwroot/js/site.js",
+      "PackagePath": "staticwebassets/js/site.js"
     },
     {
-      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.ChamadoTrackerIA.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
-      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
-    },
-    {
-      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.ChamadoTrackerIA.Microsoft.AspNetCore.StaticWebAssets.props",
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.ChamadoTrackerIA.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },
     {
-      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.ChamadoTrackerIA.props",
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.build.ChamadoTrackerIA.props",
       "PackagePath": "build\\ChamadoTrackerIA.props"
     },
     {
-      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.ChamadoTrackerIA.props",
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.ChamadoTrackerIA.props",
       "PackagePath": "buildMultiTargeting\\ChamadoTrackerIA.props"
     },
     {
-      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.ChamadoTrackerIA.props",
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.ChamadoTrackerIA.props",
       "PackagePath": "buildTransitive\\ChamadoTrackerIA.props"
     }
   ],
