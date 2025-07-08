@@ -1,4 +1,4 @@
-# ChamadoTrackerIA - Documentação do Projeto
+# ChamadoTracker - Documentação do Projeto
 
 ## Tecnologias Utilizadas
 
@@ -7,7 +7,7 @@
 - **Banco de Dados**: SQLite
 - **Linguagem**: C#
 - **UI Framework**: Bootstrap 5 + Bootstrap Icons
-- **IA**: Algoritmo personalizado de parsing de texto
+- **processamento**: Algoritmo personalizado de parsing de texto
 
 ## Funcionalidades Implementadas
 
@@ -76,7 +76,7 @@ ChamadoTrackerIA/
    data e hora de inicio
    data e hora de Final
    ```
-3. Clique em "Processar com IA"
+3. Clique em "Processar"
 4. Os chamados serão automaticamente identificados e salvos
 
 ### 2. Visualizar e Filtrar
