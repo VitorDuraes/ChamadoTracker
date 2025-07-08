@@ -4,7 +4,7 @@
 
 - **Frontend**: Blazor Server (ASP.NET Core 8.0)
 - **Backend**: ASP.NET Core 8.0
-- **Banco de Dados**: SQLite
+- **Banco de Dados**: PostgreSQL
 - **Linguagem**: C#
 - **UI Framework**: Bootstrap 5 + Bootstrap Icons
 - **processamento**: Algoritmo personalizado de parsing de texto
